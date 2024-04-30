@@ -7,12 +7,12 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     for sentence in sentences:
                                                     pattern = r"[，。？∥、].*\n應該\t.*[，。？∥]"
                                                     matches = re.findall(pattern, sentence)                                                 
-                                                    print(matches)
-    extract_sentence = []
-    for match in matches:
-                                                    extract_sentence.append(match[1:])
-                                                    print(extract_sentence)    
-    
+                                                    #print(matches)
+                                                    extract_sentence = []
+                                                    for match in matches:
+                                                                                                    extract_sentence.append(match[1:])
+                                                                                                    print(extract_sentence)    
+                                                    
 
     
     
