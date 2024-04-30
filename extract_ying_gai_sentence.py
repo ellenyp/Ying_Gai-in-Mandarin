@@ -5,7 +5,7 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     #print(sentences)
     
     # 正則表達式模式
-    pattern = r'[「，。？∥]([^。，∥\n]*?\n應該\t.*?[，。？∥])'
+    pattern = r'[「，。？∥]([^。，∥\n]*?\n應該\t.*?[：，。？∥])'
     
     # 提取符合模式的句子
     matching_sentences = []
