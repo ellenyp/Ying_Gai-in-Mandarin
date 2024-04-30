@@ -13,8 +13,8 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
         matches = re.findall(pattern, sentence)
         matching_sentences.extend(matches)
     
-    # 去除關鍵字「應該」前的換行及「應該」後的空白
-    cleaned_sentences = [match.replace('\n', '').replace('\t', '').strip() for match in matching_sentences]
+    # 去除關鍵字「應該」前的換行、「應該」後的空白，句尾標點符號
+    cleaned_sentences = [match.replace('\n', '').replace('\t', '').rstrip("，。？：") for match in matching_sentences]
 
     # 輸出結果
     for sentence in cleaned_sentences:
