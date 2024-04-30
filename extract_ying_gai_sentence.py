@@ -17,9 +17,12 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     # 去除關鍵字「應該」前的換行、「應該」後的空白，句尾標點符號
     cleaned_sentences = [match.replace('\n', '').replace('\t', '').rstrip("，。？：") for match in matching_sentences]
 
-    # 輸出結果
+    # 輸出結果至txt檔
+    file = open("ying_gai_finish.txt", "w", encoding = "utf-8")
     for sentence in cleaned_sentences:
-        print(sentence) 
+        file.write(sentence)
+        file.write("\n")
+        #print(sentence) 
         
    
                                                     
