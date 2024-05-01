@@ -19,10 +19,12 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     # 輸出結果至txt檔
     file = open("ying_gai_finish.txt", "w", encoding = "utf-8")
     for sentence in cleaned_sentences:
+        #file.write()
         file.write(sentence)
         file.write("\n")
         #print(sentence) 
-        
+file.close()
+f.close()
    
                                                     
 
