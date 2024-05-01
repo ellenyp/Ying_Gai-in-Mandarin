@@ -5,7 +5,7 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     #print(sentences)
     
     # 正則表達式模式
-    pattern = r'([^。，？∥\n]*?\n應該\t.*?[：，。？∥])'
+    pattern = r'([^。，？∥\n]*?\n應該\t.*?[：，。？（∥])'
     
     # 提取符合模式的句子
     matching_sentences = []
@@ -14,7 +14,7 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
         matching_sentences.extend(matches)
     
     # 去除關鍵字「應該」前的換行、「應該」後的空白，句尾標點符號
-    cleaned_sentences = [match.replace('\n', '').replace('\t', '').rstrip("，。？：") for match in matching_sentences]
+    cleaned_sentences = [match.replace('\n', '').replace('\t', '').rstrip("，。？：（") for match in matching_sentences]
 
     ##將上引號刪除，成對的引號則保留    
     #for sentence in cleaned_sentences:
