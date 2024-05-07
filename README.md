@@ -9,3 +9,14 @@
 4. 使用 **.replace** 將多餘換行及tab刪除，並使用 **.rstrip** 將句尾標點符號刪除
 5. 定義**function**將單獨出現引號刪除
 6. 將欲提取的句子以不重複為原則，寫出txt檔
+### Content
+```
++---intent
+|       extract_ying_gai_final.py
+|       test_ying_gai.py
+|       ying_gai.py
+|
+\---txt
+        new_ying_gai.txt
+        ying_gai_finish.txt
+        ying_gai_raw.txt
