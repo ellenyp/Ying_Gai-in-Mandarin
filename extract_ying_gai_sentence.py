@@ -16,28 +16,27 @@ with open("ying_gai_raw.txt", "r", encoding = "utf-8") as f:
     # 去除關鍵字「應該」前的換行、「應該」後的空白，句尾標點符號
     cleaned_sentences = [match.replace('\n', '').replace('\t', '').rstrip("，。？：（") for match in matching_sentences]
 
-    ##將上引號刪除，成對的引號則保留    
-    #for sentence in cleaned_sentences:
-        #def remove_quotes(sentence):
-            #if '「' in sentence and '」' in sentence:
-                #return sentence
-            #elif '「' in sentence:
-                #return sentence.replace('「', '')
-            #else:
-                #return sentence
-        ## 輸出結果
+    #將上引號刪除，成對的引號則保留    
+    for sentence in cleaned_sentences:
+        def remove_quotes(sentence):
+            if '「' in sentence and '」' in sentence:
+                return sentence
+            elif '「' in sentence:
+                return sentence.replace('「', '')
+            else:
+                return sentence
+        # 輸出結果
         #print(remove_quotes(sentence))    
     
+    written_sentences = set()  # 用集合跟踪已經寫出的句子
     # 輸出結果至txt檔
-    file = open("ying_gai_finish.txt", "w", encoding = "utf-8")
-    for sentence in cleaned_sentences:
-        #file.write()
-        file.write(sentence)
-        file.write("\n")
-        #print(sentence) 
-file.close()
-f.close()
-   
+    with open ("ying_gai_finish.txt", "w", encoding = "utf-8") as f:
+        for sentence in cleaned_sentences:
+                sentence = remove_quotes(sentence)
+                if sentence not in written_sentences:
+                    f.write(sentence + "\n")
+                    written_sentences.add(sentence)
+                    print (sentence)
                                                     
 
     
